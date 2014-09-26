@@ -1,12 +1,42 @@
 ---
 layout: default
-title: 我的Blog
+title: cx's Website
 ---
-<h2>{{ page.title }}</h2>
-<p>最新文章</p>
-<ul>
-{% for post in site.posts %}
-<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-</li>
+{% for post in paginator.posts %}
+<div class="post">
+    <h2>
+        <a class="title" href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
+    </h2>
+    <p class="published muted">{{ post.date | date_to_string }}</p>
+    <div class="content">
+        {{ post.content | truncatehtml: 500 }}
+        <a href="{{ post.url }}" class="btn pull-right">Read More</a>
+    </div>
+    <p class="muted">
+        Tags&nbsp;
+        {% for category in post.categories %}
+        <a href="/categories/{{ category }}" title="{{ category }}" rel="category tag" class="btn btn-mini">{{ category }}</a>
+        {% endfor %}
+    </p>
+</div>
+<hr/>
 {% endfor %}
-</ul>
+
+<div class="pager">
+    <ul>
+        {% if paginator.previous_page %}
+        <li class="previous">
+            {% if paginator.previous_page == 1 %}
+            <a href="/blog.html" title="Previous Page">&laquo; Previous</a>
+            {% else %}
+            <a href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Previous</a>
+            {% endif %}
+        </li>
+        {% endif %}
+        <li class="next">
+            {% if paginator.next_page %}
+            <a href="/page{{ paginator.next_page }}/" title="Next Page">Next &raquo;</a>
+            {% endif %}
+        </li>
+    </ul>
+</div>
