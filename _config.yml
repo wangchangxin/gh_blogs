@@ -1,4 +1,47 @@
+permalink: /:year/:month/:day/:title.html
 paginate: 10
-pygments: true
-markdown: rdiscount
-permalink: /:year/:month/:day/:title/
+markdown: redcarpet
+
+# 作者信息
+author: 
+  name: Cink Wang
+  email: 17394735@qq.com
+  link: http://weirj.com
+  weibo: http://
+  github: http://github.com/wangchangxin
+  music: http://
+  linkedin: https://
+
+# 站点信息
+title: Cink的博客
+description: My personal blog
+url: http://weirj.com
+rss_url: /pages/atom.xml
+
+# gavatar头像及Favicon
+gavatar: /public/img/deer3.png
+favicon: /public/img/deer3.png
+
+# google analytics 设置
+ga:
+  id: ccccccc
+  url: weirj.com
+
+# disqus 设置
+disqus:
+  shortname: cink
+
+# 主题设置，自动激活某个标签
+active: 技术
+
+# 首页除了最新文章外显示分类
+cates: 
+  - Optimization
+  - LaTeX
+
+# 中文本地化
+locals:
+  tags: 标签
+  about: 关于
+  newest: 最新文章
+  archive: 归档

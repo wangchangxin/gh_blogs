@@ -1,15 +1,21 @@
-<footer class="footer">
-  <div class="container">
-    <p class="text-center">
-      Proudly powered by
-      <a href="https://github.com/mojombo/jekyll" rel="generator">Jekyll</a>
-    </p>
-    <ul class="footer-links">
-      <!--<li><a href="http://blog.getbootstrap.com">Blog</a></li>-->
-      <!--<li class="muted">·</li>-->
-      <!--<li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>-->
-      <!--<li class="muted">·</li>-->
-      <!--<li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>-->
-    </ul>
-  </div>
-</footer>
+<div style="position:fixed;right:15px;top:62px;">
+  <button id="content_btn" class="btn btn-primary" style="width:43px; height:34px;">
+    <i class="fa fa-lg fa-plus"></i>
+  </button>
+</div>
+<div style="position:fixed;right:15px;top:20px;">
+  <button id="nav_btn" class="btn btn-primary">
+    <i class="fa fa-lg fa-navicon"></i>
+  </button>
+</div>
+<script type="text/javascript" src="/public/js/jquery.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.js"></script>
+<script src="/public/js/jquery.pjax.js"></script>
+<script src="/public/js/prettify/prettify.js"></script>
+<script src="/public/js/base.js"></script>
+<script src="/public/js/jquery.scrollUp.js"></script>
+<script>
+    $('a[href="#{{ site.active }}"]').tab('show');
+</script>
+
+<!--button是右上方导航和显示目录的按钮>

@@ -1,30 +1,25 @@
 ---
-layout: default
+layout: base
 ---
-<div class="post">
-  <h1><a class="title" href="{{ page.url }}" title="{{ page.title }}" rel="bookmark">{{ page.title }}</a></h1>
-  <p class="published muted">{{ page.date | date_to_string }}</p>
-  <div class="content">{{ content }}</div>
-  <p class="muted">
-    Tags&nbsp;
-    {% for category in page.categories %}
-    <a href="/categories/{{ category }}" title="{{ category }}" rel="category tag" class="btn btn-mini">{{ category }}</a>
-    {% endfor %}
-  </p>
+<div class="row">
+  <div class="col-md-13 aside3-title">
+    <br>
+    <h2 id="#identifier">{{ page.title }}</h2>
+    {{ page.date | date:"%Y年%m月%d日" }}
+  </div>
+  <div class="col-md-13 aside3-content">
+    <hr>
+    <div id="content">
+      {{ content }}
+    </div>
+    <hr>
+    {% include disqus.html %}
+  </div>
+  <!-- 目录 -->
+  <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
+    <div class="panel panel-success">
+      <div class="panel-body" id="nav"></div>
+    </div>
+  </div>
 </div>
-<hr/>
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-  var disqus_shortname = 'richard-huang';
-
-  var disqus_url = "http://www.huangzhimin.com{{page.url}}";
-
-  (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
